@@ -1,0 +1,222 @@
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+:root {
+  --color-primary: #8a79e2;
+  --color-muted: #ada5b4;
+}
+
+body {
+  margin: 0;
+  color: white;
+  background: linear-gradient(#252043, #000000);
+  font-family: "Euclid Circular A", "Poppins";
+}
+
+.bg-lg-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.bg-lg-group .background {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.background .blob,
+.background .orbit-1,
+.background .orbit-2 {
+  position: fixed;
+  z-index: 1;
+  /* top: 50%;
+  left: 50%;
+  translate: -50% -50%; */
+}
+
+.background .blob {
+  width: 85vw;
+  max-width: 550px;
+}
+
+@keyframes spin-right {
+  100% {
+    rotate: 1turn; /* 1turn = 360deg */
+  }
+}
+@keyframes spin-left {
+  100% {
+    rotate: -1turn; /* -1turn = -360deg */
+  }
+}
+
+.background .orbit-1,
+.background .orbit-2 {
+  width: 95vw;
+  aspect-ratio: 1/1;
+  border: 2px solid rgb(255 255 255 / 5%); /* sama dengan rgba(0, 0, 0, .05)*/
+  border-radius: 50%;
+
+}
+
+.background .orbit-1 {
+  max-width: 720px;
+  animation: spin-right 50s infinite linear;
+}
+
+.background .orbit-2 {
+  max-width: 870px;
+  animation: spin-left 50s infinite linear;
+  transform: rotate(45deg);
+}
+
+.background .orbit-1::before,
+.background .orbit-1::after,
+.background .orbit-2::before,
+.background .orbit-2::after {
+  content: "";
+  position: absolute;
+  aspect-ratio: 1/1;
+  top: 50%;
+  border-radius: inherit;
+}
+
+.background .orbit-1::before {
+  background: linear-gradient(#8c7a6b, #b2b2b2);
+  background: linear-gradient(#757575, #b2b2b2);
+  width: 20px;
+  left: -9px;
+}
+
+.background .orbit-2::before {
+  /* background: linear-gradient(#e2725b, #a22b2b); */
+  background: linear-gradient(#b5b5b5, #3d3d3d);
+  width: 23px;
+  left: -9px;
+}
+
+.background .orbit-1::after {
+  /* background: linear-gradient(#bd9e76, #fff7af); */
+  background: linear-gradient(#cacaca, #5d5c5c);
+  width: 26px;
+  right: -12px;
+}
+
+.background .orbit-2::after {
+  /* background: linear-gradient(#87ceeb, #228b22); */
+  background: linear-gradient(#242424, #b9b9b9);
+  width: 30px;
+  right: -12px;
+}
+
+.bg-lg-group .login {
+  position: fixed;
+  z-index: 2;
+  width: 80vw;
+  max-width: 340px;
+  background-color: rgb(0 0 0 / 10%);
+  backdrop-filter: blur(5px);
+  border-radius: 24px;
+  padding: 72px 32px 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 2px solid rgb(255 255 255 / 10%);
+}
+
+.login img {
+  width: 108px;
+  margin: 0 0 42px;
+}
+
+.login :is(h2, h3) { /* sama dengan penulisan (.login h2, .login h3) */
+  font-weight: 500;
+}
+
+.login h2 {
+  font-size: 18px;
+  margin: 0 0 6px;
+}
+
+.login h3 {
+  font-size: 13px;
+  margin: 0 0 42px;
+  color: var(--color-muted);
+}
+
+.login form {
+  display: grid;
+  gap: 12px;
+  width: 100%;
+  margin: 0 0 20px;
+}
+
+.login :is(input, button) {
+  height: 52px;
+  font-family: inherit;
+  font-size: 15px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 6px;
+}
+
+.login .textbox {
+  position: relative;
+}
+
+.login label,
+.login input {
+  transition: .3s;
+}
+
+.textbox label {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  translate: 0 -50%;
+  transform-origin: 0 50%;
+  pointer-events: none;
+  color: var(--color-muted);
+}
+
+.textbox input {
+  width: 100%;
+  padding-top: 10px;
+  background-color: rgb(255 255 255 / 4%);
+  outline: none;
+  color: inherit;
+  box-shadow: 0 0 0 2px transparent;
+}
+
+.textbox input:focus {
+  box-shadow: 0 0 0 2px var(--color-primary);
+}
+
+.textbox input:is(:focus, :not(:invalid)) ~ label {
+  scale: 0.725;
+  translate: 0 -112%;
+}
+
+.login button {
+  color: #f9f9f9;
+  background-color: var(--color-primary);
+}
+
+.login a {
+  font-size: 14px;
+  color: var(--color-primary);
+}
+
+.login p {
+  margin: 48px 0 0;
+  font-size: 14px;
+  color: var(--color-muted);
+}
+
+
