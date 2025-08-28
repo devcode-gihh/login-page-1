@@ -1,0 +1,84 @@
+@media screen and (max-width: 1366px) {
+  .background .blob {
+    max-width: 430px;
+  }
+
+  .background .orbit-1 {
+    max-width: 570px;
+  }
+
+  .background .orbit-2 {
+    max-width: 720px;
+  }
+
+  .background .orbit-1::before {
+    width: 17px;
+  }
+
+  .background .orbit-2::before {
+    width: 20px;
+  }
+
+  .background .orbit-1::after {
+    width: 23px;
+  }
+
+  .background .orbit-2::after {
+    width: 27px;
+  }
+
+  .bg-lg-group .login {
+    width: 80vw;
+    max-width: 300px;
+    padding: 52px 32px 38px;
+  }
+
+  .login img {
+    width: 95px;
+    margin: 0 0 32px;
+  }
+
+  .login h2 {
+    font-size: 16px;
+    margin: 0 0 4px;
+  }
+
+  .login h3 {
+    font-size: 11.5px;
+    margin: 0 0 40px;
+  }
+
+  .login form {
+    gap: 8px;
+    margin: 0 0 15px;
+  }
+
+  .login :is(input, button) {
+    height: 45px;
+    font-size: 12.5px;
+    padding: 0 10px;
+  }
+
+  .textbox label {
+    left: 10px;
+    font-size: 13.5px;
+    transform-origin: 0 40%;
+  }
+
+  .textbox input {
+    padding-top: 10px;
+  }
+
+  .textbox input:is(:focus, :not(:invalid)) ~ label {
+    translate: 0 -100%;
+  }
+
+  .login a {
+    font-size: 12px;
+  }
+
+  .login p {
+    margin: 30px 0 0;
+    font-size: 12px;
+  }
+}

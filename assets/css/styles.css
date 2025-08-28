@@ -33,13 +33,10 @@ body {
 .background .orbit-2 {
   position: fixed;
   z-index: 1;
-  /* top: 50%;
-  left: 50%;
-  translate: -50% -50%; */
 }
 
 .background .blob {
-  width: 85vw;
+  width: 83vw;
   max-width: 550px;
 }
 
@@ -50,28 +47,30 @@ body {
 }
 @keyframes spin-left {
   100% {
-    rotate: -1turn; /* -1turn = -360deg */
+    rotate: -1turn; 
   }
 }
 
 .background .orbit-1,
 .background .orbit-2 {
-  width: 95vw;
   aspect-ratio: 1/1;
   border: 2px solid rgb(255 255 255 / 5%); /* sama dengan rgba(0, 0, 0, .05)*/
   border-radius: 50%;
-
 }
 
 .background .orbit-1 {
+  width: 95vw;
   max-width: 720px;
   animation: spin-right 50s infinite linear;
+  opacity: .8;
 }
 
 .background .orbit-2 {
+  width: 115vw;
   max-width: 870px;
   animation: spin-left 50s infinite linear;
   transform: rotate(45deg);
+  opacity: .6;
 }
 
 .background .orbit-1::before,
@@ -86,28 +85,24 @@ body {
 }
 
 .background .orbit-1::before {
-  background: linear-gradient(#8c7a6b, #b2b2b2);
   background: linear-gradient(#757575, #b2b2b2);
   width: 20px;
   left: -9px;
 }
 
 .background .orbit-2::before {
-  /* background: linear-gradient(#e2725b, #a22b2b); */
   background: linear-gradient(#b5b5b5, #3d3d3d);
   width: 23px;
   left: -9px;
 }
 
 .background .orbit-1::after {
-  /* background: linear-gradient(#bd9e76, #fff7af); */
   background: linear-gradient(#cacaca, #5d5c5c);
   width: 26px;
   right: -12px;
 }
 
 .background .orbit-2::after {
-  /* background: linear-gradient(#87ceeb, #228b22); */
   background: linear-gradient(#242424, #b9b9b9);
   width: 30px;
   right: -12px;
