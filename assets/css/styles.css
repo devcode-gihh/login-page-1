@@ -38,6 +38,8 @@ body {
 .background .blob {
   width: 83vw;
   max-width: 550px;
+  opacity: 0.25;
+  aspect-ratio: 1 / 1;
 }
 
 @keyframes spin-right {
